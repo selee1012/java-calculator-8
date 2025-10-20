@@ -6,6 +6,7 @@ public class Application {
         // TODO: 프로그램 구현
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("덧셈할 문자열을 입력해 주세요.");
         String inp = sc.nextLine();
         List<Character> target = new ArrayList<>(Arrays.asList(',', ':'));
         if (inp.length() >= 5) {
@@ -30,7 +31,7 @@ public class Application {
             throw new IllegalArgumentException("잘못된 입력입니다");
         }
 
-        System.out.println(count);
+        System.out.println("결과 : " + count);
         sc.close();
     }
 }
