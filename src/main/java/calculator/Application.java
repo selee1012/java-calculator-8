@@ -9,10 +9,11 @@ public class Application {
         System.out.println("덧셈할 문자열을 입력해 주세요.");
         String inp = sc.nextLine();
         List<Character> target = new ArrayList<>(Arrays.asList(',', ':'));
-        if (inp.length() >= 5) {
-            if ((inp.charAt(0) == '/') && (inp.charAt(1) == '/') && (inp.charAt(3) == '\\') && (inp.charAt(4) == 'n')) {
+        if (inp.startsWith("//")) {
+            int nl = inp.indexOf('\n');     // 실제 개행 문자
+            if (nl > 2) {
                 target.add(inp.charAt(2));
-                inp = inp.substring(5);
+                inp = inp.substring(nl + 1);
             }
         }
 
